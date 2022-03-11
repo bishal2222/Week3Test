@@ -1,2 +1,2 @@
-secret.py
 __pycache__/
+*secret.py
