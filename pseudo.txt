@@ -1,0 +1,52 @@
+create dataframe and insert into PostgreSQL using sqlalchemy
+# db = pd.read_sql_table('dividend', conn)
+# print(db)
+# conn.close()
+
+# studentScores = [(57, 61, 76, 56, 67),
+
+#                  (77, 67, 65, 78, 62),
+
+#                  (65, 71, 56, 63, 70)
+
+#                 ];
+
+# # Create a DataFrame
+
+# dataFrame   = pd.DataFrame(studentScores,
+
+#               index=(1211,1212,1213), # Student ids as index
+
+#               columns=("Physics", "Chemistry", "Biology", "Mathematics", "Language")
+
+#               );
+
+
+# postgreSQLTable         = "StudentScores";
+
+ 
+
+# try:
+
+#     frame           = dataFrame.to_sql(postgreSQLTable, conn, if_exists='fail');
+
+# except ValueError as vx:
+
+#     print(vx)
+
+# except Exception as ex:  
+
+#     print(ex)
+
+# else:
+
+#     print("PostgreSQL Table %s has been created successfully."%postgreSQLTable);
+
+# finally:
+
+#     conn.close();
+
+
+# df = pd.read_sql('select * from StudentScores', conn)
+# print(df)
+# conn.close()

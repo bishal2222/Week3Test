@@ -1,0 +1,21 @@
+with num as ( select t.id, t.request_at, t.client_id, t.driver_id, t.status
+	from trips as t 
+	inner join users as u
+	on u.users_id = t.client_id or
+		u.users_id = t.driver_id
+	where t.status = 'cancelled_by_client' or 
+		t.status = 'cancelled_by_driver' and
+		u.banned = 'no' )
+		
+
+(select count(t.status)/ count(n.status) as cancel
+		from num as n
+ 		left join trips as t
+		on n.id = t.id
+		right join users as u
+		on u.users_id = t.client_id 
+		where t.request_at = n.request_at 
+		and u.banned = 'no')
+		
+
+		
